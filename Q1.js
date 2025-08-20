@@ -1,5 +1,6 @@
 function magic() {
   let x;
+  // assignment (=) operator has more precedence than (,) operator
   x = 1, [], {}; // 1
   return x;
 }
