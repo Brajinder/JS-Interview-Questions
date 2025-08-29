@@ -26,3 +26,16 @@ if ([] == true) {
 // | `true == "1"`       | `true` |
 // | `[0] == 0`          | `true` |
 // | `[1] == true`       | `true` |
+
+
+
+// Why not true == false? (`[] == ![]`)
+
+// Because == does not call Boolean(x) on objects.
+// Instead, it tries to bring both values into numbers (or primitives).
+
+// The rule is:
+
+// If one side is a boolean, convert it to a number (false → 0, true → 1).
+
+// If the other side is an object, convert it to a primitive ([].toString() → "" → 0).
