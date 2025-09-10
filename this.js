@@ -16,5 +16,17 @@ obj.foo(); // logs obj
 
 //ARROW Func:
 const arrow = () => console.log(this);
-arrow(); // `this` is inherited from outer scope
+arrow(); // `this` is inherited from outer scope 
+// and in Node.js out scope is "{}" not the Global Object (because of module concept in node), see below
+
+console.log(this); // node.js wraps in module, therefore "{}"
+
+// 🔎 Behavior
+// Arrow functions
+// Arrow functions ignore .call(), .apply(), .bind() when it comes to this.
+// They always use the lexical this from where they were created.
+
+
+
+
 
